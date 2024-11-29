@@ -9,9 +9,9 @@
 
 import Link from 'next/link'
 import { FC, useEffect } from 'react'
-import { Textarea, Button, Card } from '@chakra-ui/react'
+import { Textarea, Button } from '@chakra-ui/react'
 
-import { Wrapper } from '@/components'
+import { Card, Wrapper } from '@/components'
 
 import useHome from './hooks'
 
@@ -73,27 +73,14 @@ const HomeModule: FC = () => {
 
       <p className='font-bold text-lg pb-4'>Posts</p>
 
-      {posts.length === 0 ? (
-        <Card.Root>
-          <Card.Body>
-            <p>No post</p>
-          </Card.Body>
-        </Card.Root>
-      ) : undefined}
+      {posts.length === 0 ? <Card content='No post' /> : undefined}
 
       {posts.length > 0 ? (
         <div className='flex flex-col gap-4'>
           {posts.map((item) => {
             return (
               <Link key={item.id} href={`/post/${item.id}`}>
-                <Card.Root>
-                  <Card.Body className='flex flex-col gap-2'>
-                    <p>{item.content}</p>
-                    <p className='text-sm text-gray-600'>
-                      Created at {item.createdDate.toDateString()}
-                    </p>
-                  </Card.Body>
-                </Card.Root>
+                <Card content={item.content} createdDate={item.createdDate} />
               </Link>
             )
           })}
