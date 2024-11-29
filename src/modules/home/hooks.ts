@@ -15,6 +15,7 @@ type TForm = {
 const useHome = () => {
   const { posts, addPost } = store()
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -25,6 +26,10 @@ const useHome = () => {
       content,
       createdDate: new Date(),
       id: v4(),
+    })
+
+    reset({
+      content: '',
     })
   }
 

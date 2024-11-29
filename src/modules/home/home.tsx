@@ -7,6 +7,7 @@
 
 'use client'
 
+import Link from 'next/link'
 import { FC, useEffect } from 'react'
 import { Textarea, Button, Card } from '@chakra-ui/react'
 
@@ -84,14 +85,16 @@ const HomeModule: FC = () => {
         <div className='flex flex-col gap-4'>
           {posts.map((item) => {
             return (
-              <Card.Root key={item.id}>
-                <Card.Body className='flex flex-col gap-2'>
-                  <p>{item.content}</p>
-                  <p className='text-sm text-gray-600'>
-                    Created at {item.createdDate.toDateString()}
-                  </p>
-                </Card.Body>
-              </Card.Root>
+              <Link key={item.id} href={`/post/${item.id}`}>
+                <Card.Root>
+                  <Card.Body className='flex flex-col gap-2'>
+                    <p>{item.content}</p>
+                    <p className='text-sm text-gray-600'>
+                      Created at {item.createdDate.toDateString()}
+                    </p>
+                  </Card.Body>
+                </Card.Root>
+              </Link>
             )
           })}
         </div>
