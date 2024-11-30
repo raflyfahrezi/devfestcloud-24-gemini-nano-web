@@ -40,33 +40,7 @@ const usePost = ({ id }: { id: string }) => {
   }, [posts])
 
   const summarizeHandler = async () => {
-    if (comments.length === 0) {
-      return
-    }
-
-    const statusCheckCanSummarize = await checkCanSummarize()
-
-    if (statusCheckCanSummarize === 'no') {
-      return
-    }
-
-    const commentsContent = comments.map((item) => item.content)
-    const mergedCommentsContent = commentsContent.join('. ')
-
-    const summarizer = await window.ai.summarizer.create({
-      sharedContext: 'Comment of post',
-      type: 'tl;dr',
-      format: 'markdown',
-      length: 'medium',
-    })
-
-    await summarizer.ready
-
-    const summary = await summarizer.summarize(mergedCommentsContent, {
-      context: 'Summarize this comment of a post',
-    })
-
-    console.log(summary)
+    //
   }
 
   useEffect(() => {
