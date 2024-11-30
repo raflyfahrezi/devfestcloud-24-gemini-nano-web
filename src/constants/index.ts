@@ -1,4 +1,4 @@
-import { TPost } from '@/models'
+import { TPost, TComment } from '@/models'
 
 export const seedPosts: TPost[] = [
   {
@@ -27,5 +27,27 @@ Problem abstraction itu mengubah dari statement di atas menjadi
     content: `iShowSpeed shares his thoughts on if streaming is harder than working a 9-5 job 
 
 “I was a server… let me tell you this no… it was way harder, it was draining mentally… I don’t get how streamers even say that”`,
+  },
+]
+
+export const seedComment: TComment[] = [
+  {
+    id: '07855953-5f15-4e61-be50-83a1b0acfd7d',
+    idPost: 'f8cfcaa1-7b22-40bf-b794-05db7ca21f07',
+    content:
+      'Im totally agree, we can learn computational thinking using Scratch',
+    createdDate: new Date(),
+  },
+  {
+    id: '20165685-0cc6-44bd-9af5-527264126469',
+    idPost: 'f8cfcaa1-7b22-40bf-b794-05db7ca21f07',
+    content: 'This opinion is gold, thank you for sharing',
+    createdDate: new Date(),
+  },
+  {
+    id: 'eaa9dfc3-7ff1-44fc-9ce0-db22a020a7ab',
+    idPost: 'f8cfcaa1-7b22-40bf-b794-05db7ca21f07',
+    content: 'I have the same opinion with him',
+    createdDate: new Date(),
   },
 ]

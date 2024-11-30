@@ -43,7 +43,7 @@ const Card: FC<TCard> = ({ id, content, createdDate }) => {
         )}
 
         {alertStatus && (
-          <Alert.Root size='sm'>
+          <Alert.Root size='sm' status='warning'>
             <Alert.Indicator />
             <Alert.Title>{alertStatus}</Alert.Title>
           </Alert.Root>

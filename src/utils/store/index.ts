@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
-import { seedPosts } from '@/constants'
 import { TPost, TComment } from '@/models'
+import { seedPosts, seedComment } from '@/constants'
 
 type TStore = {
   posts: TPost[]
@@ -12,7 +12,7 @@ type TStore = {
 
 export const store = create<TStore>((set) => ({
   posts: [...seedPosts],
-  comments: [],
+  comments: [...seedComment],
   addPost: (post) => set((state) => ({ posts: [...state.posts, post] })),
   addComments: (comment) =>
     set((state) => ({ comments: [...state.comments, comment] })),

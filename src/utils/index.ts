@@ -14,4 +14,8 @@ export const checkCanDetectLanguage = async (): Promise<TTranslationStatus> => {
   return await window.translation.canDetect()
 }
 
+export const checkCanSummarize = async (): Promise<TTranslationStatus> => {
+  return (await window.ai.summarizer.capabilities()).available
+}
+
 export * from './store'
