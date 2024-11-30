@@ -46,8 +46,6 @@ const usePost = ({ id }: { id: string }) => {
 
     const statusCheckCanSummarize = await checkCanSummarize()
 
-    console.log(statusCheckCanSummarize)
-
     if (statusCheckCanSummarize === 'no') {
       return
     }
