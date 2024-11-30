@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 
+import { seedPosts } from '@/constants'
 import { TPost, TComment } from '@/models'
 
 type TStore = {
@@ -10,7 +11,7 @@ type TStore = {
 }
 
 export const store = create<TStore>((set) => ({
-  posts: [],
+  posts: [...seedPosts],
   comments: [],
   addPost: (post) => set((state) => ({ posts: [...state.posts, post] })),
   addComments: (comment) =>

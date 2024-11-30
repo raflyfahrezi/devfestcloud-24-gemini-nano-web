@@ -10,4 +10,8 @@ export const checkCanTranslate = async (
   })
 }
 
+export const checkCanDetectLanguage = async (): Promise<TTranslationStatus> => {
+  return await window.translation.canDetect()
+}
+
 export * from './store'

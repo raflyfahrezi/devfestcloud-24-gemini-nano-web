@@ -24,7 +24,11 @@ const PostModule: FC<{ id: string }> = ({ id }) => {
 
   return (
     <Wrapper>
-      <Card content={dataPost?.content} createdDate={dataPost?.createdDate} />
+      <Card
+        id={dataPost?.id}
+        content={dataPost?.content}
+        createdDate={dataPost?.createdDate}
+      />
     </Wrapper>
   )
 }
